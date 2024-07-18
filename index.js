@@ -6,6 +6,20 @@ function isPalindrome(word) {
   Add your pseudocode here
 */
 
+function isPalindrome(str) {
+  // Remove non-alphanumeric characters and convert to lowercase
+  const cleanedStr = str.replace(/[^a-z0-9]/gi, '').toLowerCase();
+  
+  // Compare the cleaned string with its reversed version
+  return cleanedStr === cleanedStr.split('').reverse().join('');
+}
+
+// Test cases
+console.log(isPalindrome('abba'));      // true
+console.log(isPalindrome('racecar'));   // true
+console.log(isPalindrome('a'));         // true
+console.log(isPalindrome('robot'));     // false
+console.log(isPalindrome('ab'));        // false
 /*
   Add written explanation of your solution here
 */
